@@ -30,36 +30,49 @@ struct proveedor{
 	int long numeroP[11];
 };
 
-
-void menu(int n){
+void nuevocliente(struct clientes *clientesT){
 	int folio;
-	switch(n){
-	case 1:
-	break;
-	case 2:{
-		printf("introduce el folio del cliente\n");
+	printf("introduce un folio\n");
+	scanf("%d",&folio);
+	printf("Introduce el primer nombre\n");
 		fflush(stdin);
-		scanf("%d",&folio);
-		nuevoCliente(folio);
+		scanf("%s",clientesT[folio].nombre1);
+		printf("Introduce el segundo nombre\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].nombre2);
+		printf("introduce el primer apellido\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].apellido1);
+		printf("introduce el segundo apellido\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].apellido2);
+		printf("Introduce el RFC del cliente\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].rfc);
+		printf("Introduce la ciudad\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].ciudad);
+		printf("Introduce el codigo postal\n");
+		fflush(stdin);
+		scanf("%d",clientesT[folio].cp);
+		printf("introduce la direccion\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].direccion);
+		printf("Introduce el e-mail\n");
+		fflush(stdin);
+		scanf("%s",clientesT[folio].correo);
+		printf("Introduce el numero\n");
+		fflush(stdin);
+		scanf("%d",clientesT[folio].numero);
 	}
-	break;
-	case 3:
-	break;
-	case 4:
-	break;
-	case 5:
-	break;
-	case 6:
-	break;
-	case 7:
-	break;
-	case 8:
-	break;
-	case 9:
-	break;	
-	}
-}
+int menu(){
+	int n;
+	scanf("%d",&n);
+	return n;}
+	
+
 int main(int argc, char *argv[]) {
+	 struct clientes clientesT[1000];
 int opcion;
 lebel:
 printf("\n\n\n\n");
@@ -77,10 +90,36 @@ printf("        pres 9 para SALIR\n");
 printf("\n\n\n\n\n");
 printf("--------------------------------------------RISC-SOLUTIONS-&-DEVELPMENTS\n");
 fflush(stdin);
-scanf("%d",&opcion);
-while(opcion>=1 && opcion <=7){
-menu(opcion);}
-goto lebel;
+opcion=menu();
+	
+	switch(opcion){
+	case 1:
+	break;
+	case 2:{
+		
+		nuevocliente(clientesT);
+	}
+	break;
+	case 3:
+	break;
+	case 4:
+	break;
+	case 5:
+	break;
+	case 6:
+	break;
+	case 7:
+	break;
+	case 8:
+	break;
+	case 9:
+	break;
+	default:
+	break;	
+	}
+
+
+//goto lebel;
 
 
 
